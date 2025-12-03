@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GlucoMind AI | Diabetes Prediction Using Machine Learning</title>
+
+    <!-- EXTERNAL CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <nav>
+        <div class="logo">GlucoMind<span>AI</span></div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#prediction">Prediction</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>Discover your diabetes risk with artificial intelligence</h1>
+        <p>
+          Our algorithms analyze clinical data with precision to help you take care of what matters most: your health.
+          Remember: this analysis does not replace a medical diagnosis. It is only a prediction based on data and may not
+          be 100% accurate.
+        </p>
+        <a href="#prediction" class="btn-cta">Get Free Analysis</a>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?q=80&w=800&auto=format&fit=crop"
+          alt="Hands holding a red heart with a stethoscope"
+        />
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about">
+      <div class="section-header">
+        <h2>How does the AI evaluate your health?</h2>
+        <p>
+          We use key global medical variables to identify risk levels.
+        </p>
+      </div>
+
+      <div class="variables-grid">
+        <div class="var-card">
+          <h3>🧪 Glucose & HbA1c</h3>
+          <p>
+            Blood sugar and glycated hemoglobin levels are the strongest indicators.
+          </p>
+        </div>
+        <div class="var-card">
+          <h3>⚖️ BMI</h3>
+          <p>
+            The body mass index helps identify overweight, a major risk factor.
+          </p>
+        </div>
+        <div class="var-card">
+          <h3>❤️ Cardiac History</h3>
+          <p>
+            Hypertension and previous heart conditions are correlated with diabetes.
+          </p>
+        </div>
+        <div class="var-card">
+          <h3>🚬 Lifestyle</h3>
+          <p>
+            Factors such as smoking and age are weighted by our algorithm.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREDICTION FORM -->
+    <section id="prediction" class="prediction-section">
+      <div class="form-wrapper">
+        <div class="section-header" style="margin-bottom: 2rem">
+          <h2>Risk Calculator</h2>
+          <p>Enter your clinical data (Simulation based on a Real Dataset)</p>
+        </div>
+
+        <form id="diabetesForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Gender</label>
+              <select id="gender" required>
+                <option value="">Select...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Age</label>
+              <input type="number" id="age" placeholder="e.g. 45" required />
+            </div>
+
+            <div class="form-group">
+              <label>Hypertension?</label>
+              <select id="hypertension">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Heart Disease?</label>
+              <select id="heart_disease">
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Smoking History</label>
+              <select id="smoking_history">
+                <option value="never">Never smoked</option>
+                <option value="former">Former smoker</option>
+                <option value="current">Current smoker</option>
+                <option value="No Info">No information</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>BMI (e.g. 27.5)</label>
+              <input
+                type="number"
+                id="bmi"
+                step="0.01"
+                placeholder="27.5"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>HbA1c Level (e.g. 5.5)</label>
+              <input
+                type="number"
+                id="hba1c"
+                step="0.1"
+                placeholder="5.5"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>Glucose Level (mg/dL)</label>
+              <input type="number" id="glucose" placeholder="140" required />
+            </div>
+
+            <button type="submit" class="btn-submit">
+              Calculate Risk Now
+            </button>
+          </div>
+        </form>
+
+        <div id="resultContainer" class="result-container">
+          <div id="resultCard" class="result-card">
+            <h3 id="resultTitle" style="font-size: 1.5rem; margin-bottom: 10px">
+              --
+            </h3>
+            <div class="risk-bar-bg">
+              <div id="riskBarFill" class="risk-bar-fill"></div>
+            </div>
+            <p id="resultDesc">AI-generated result.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer id="contact">
+      <p>&copy; 2024 GlucoMind AI. Intelligent Prediction.</p>
+    </footer>
+
+    <!-- EXTERNAL JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
